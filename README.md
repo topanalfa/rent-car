@@ -1,17 +1,13 @@
 # Rent-car web app
+![GitHub Logo](https://github.com/topanalfa/rent-car/blob/master/rent%20car.JPG)
 
-> this app is for people who want to rent a car
-> using VueJs as frontend stack and Firebase as DB
+## this app is for people who want to rent a car
+## using VueJs as frontend stack and Firebase as DB
 
-``bash
+* feature search by word
+* feature filter by color car
+* feature filter by status car
 
-# feature search by word
-
-# feature filter by color car
-
-# feature filter by status car
-
-````
 
 ## Build Setup
 
