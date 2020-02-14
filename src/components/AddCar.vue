@@ -9,11 +9,11 @@
         <form @submit.prevent="addCar">
           <div class="form-group">
             <label for="regist_number">Regist Number Car</label>
-            <input type="text" class="form-control" v-model="regist_number" />
+            <input type="text" class="form-control" v-model="regist_number" required />
           </div>
           <div class="form-group">
             <label for="color">Color</label>
-            <select class="form-control" v-model="color">
+            <select class="form-control" v-model="color" required>
               <option value="black">Black</option>
               <option value="white">White</option>
               <option value="grey">Grey</option>
@@ -39,6 +39,7 @@ export default {
   methods: {
     addCar() {
       let data = {
+        car_id: Math.floor(Math.random() * 5),
         regist_number: this.regist_number,
         color: this.color,
         status: "free",

@@ -8,10 +8,12 @@
             <h4>{{car.regist_number}} - {{car.color}}</h4>
             <div class="float-right">
               <router-link
+                v-if="car.status == 'free'"
                 class="btn btn-success"
                 role="button"
                 v-bind:to="{name: 'book-car', params: {car_id: car.car_id}}"
               >Book Now</router-link>
+              <button v-if="car.status == 'booked'" class="btn btn-default" disabled>Booked</button>
             </div>
             <span class="badge badge-pill">{{car.status}}</span>
           </li>
