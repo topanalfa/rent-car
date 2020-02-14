@@ -13,6 +13,7 @@
                 v-bind:to="{name: 'book-car', params: {car_id: car.car_id}}"
               >Book Now</router-link>
             </div>
+            <span class="badge badge-pill">{{car.status}}</span>
           </li>
         </ul>
       </div>
