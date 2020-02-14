@@ -22,7 +22,12 @@
             </router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
+            <a
+              class="nav-link"
+              href="https://github.com/topanalfa/rent-car"
+              target="_blank"
+              >Git Repo</a
+            >
           </li>
         </ul>
       </div>

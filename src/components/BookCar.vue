@@ -9,11 +9,11 @@
         <div class="list-group">
           <div class="list-group-item align-items-start">
             <div class="d-flex w-50 justify-content-between">
-              <h5 class="mb-1">{{regist_number}}</h5>
-              <small>{{color}}</small>
-              <span>{{customer}}</span>
+              <h5 class="mb-1">{{ regist_number }}</h5>
+              <small>{{ color }}</small>
+              <span>{{ customer }}</span>
             </div>
-            <p class="mb-1">{{status}}</p>
+            <p class="mb-1">{{ status }}</p>
             <form @submit.prevent="bookCar">
               <input
                 class="form-control"
@@ -34,9 +34,16 @@
               </div>
               <div class="form-group">
                 <label>Pick a date</label>
-                <input class="form-control" type="date" name="rent_date" v-model="rent_date" />
+                <input
+                  class="form-control"
+                  type="date"
+                  name="rent_date"
+                  v-model="rent_date"
+                />
               </div>
-              <button :disabled="booked" class="btn btn-primary" type="submit">Serve Car</button>
+              <button :disabled="booked" class="btn btn-primary" type="submit">
+                Serve Car
+              </button>
               <span v-if="booked">Car Booked</span>
             </form>
           </div>
@@ -81,6 +88,7 @@ export default {
     $route: "fetchData"
   },
   methods: {
+    // function to get data of selected car
     fetchData() {
       db.collection("cars")
         .where("car_id", "==", this.$route.params.car_id)
@@ -96,6 +104,7 @@ export default {
           });
         });
     },
+    // function to reserve a selected car
     bookCar() {
       let data = {
         status: "booked",

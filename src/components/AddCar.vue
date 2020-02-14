@@ -9,7 +9,12 @@
         <form @submit.prevent="addCar">
           <div class="form-group">
             <label for="regist_number">Regist Number Car</label>
-            <input type="text" class="form-control" v-model="regist_number" required />
+            <input
+              type="text"
+              class="form-control"
+              v-model="regist_number"
+              required
+            />
           </div>
           <div class="form-group">
             <label for="color">Color</label>
@@ -19,7 +24,9 @@
               <option value="silver">Silver</option>
             </select>
           </div>
-          <router-link type="button" to="/" class="btn btn-danger">Cancel</router-link>
+          <router-link type="button" to="/" class="btn btn-danger"
+            >Cancel</router-link
+          >
           <button type="submit" class="btn btn-success">Add</button>
         </form>
       </div>
@@ -37,6 +44,7 @@ export default {
     };
   },
   methods: {
+    // function to post new data car
     addCar() {
       let data = {
         car_id: Math.floor(Math.random() * 5),

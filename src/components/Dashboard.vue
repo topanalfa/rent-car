@@ -87,6 +87,7 @@ import db from "./firebaseinit";
 export default {
   name: "Dashboard",
   data() {
+    // defined needed variable
     return {
       cars: [],
       filterCar: [],
@@ -95,6 +96,7 @@ export default {
     };
   },
   created() {
+    // get all data cars when component created
     db.collection("cars")
       .get()
       .then(querySnapshot => {
@@ -113,19 +115,30 @@ export default {
       });
   },
   methods: {
+    //function to filter cars by his color
     filterByColor(e) {
-      this.filterCar = this.cars.filter(key => {
-        return key.color === e.target.value;
-      });
+      if (e.target.value !== null) {
+        //check is the value null or not
+        this.filterCar = this.cars.filter(key => {
+          return key.color === e.target.value;
+        });
+      }
     },
+    //function to search car by typing a word
     searchCar() {
-      this.filterCar = this.cars.filter(
-        key =>
-          key.regist_number.toLowerCase().indexOf(this.word.toLowerCase()) > -1
-      );
+      if (this.word != -"") {
+        //check is the value null or not
+        this.filterCar = this.cars.filter(
+          key =>
+            key.regist_number.toLowerCase().indexOf(this.word.toLowerCase()) >
+            -1
+        );
+      }
     },
+    //function to filter cars by status
     filterByStatus(e) {
       if (e.target.value !== null) {
+        //check is the value null or not
         this.filterCar = this.cars.filter(key => {
           return key.status === e.target.value;
         });
