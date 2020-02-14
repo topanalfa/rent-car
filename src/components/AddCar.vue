@@ -16,7 +16,7 @@
             <select class="form-control" v-model="color" required>
               <option value="black">Black</option>
               <option value="white">White</option>
-              <option value="grey">Grey</option>
+              <option value="silver">Silver</option>
             </select>
           </div>
           <router-link type="button" to="/" class="btn btn-danger">Cancel</router-link>
